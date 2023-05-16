@@ -1,0 +1,21 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #F6F2FF;
+    border-radius: 20px;
+}
+
+.box-img {
+    width: 320px;
+    height: 320px;
+
+}
+
+.box-img img {
+    width: 320px;
+    height: 320px;
+}

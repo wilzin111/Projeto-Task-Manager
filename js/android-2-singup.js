@@ -53,9 +53,13 @@ function salvarPerfil() {
 
     //Verificação da senha
 
-    var verificationPassword = /(?=.*[A-Z].*[A-Z])(?=.*[a-z].*[a-z])(?=.*\d.*\d)/
+    var verificationPassword = /(?=.*[A-Z])(?=.*[a-z])(?=.*\d)/
     if (!verificationPassword.test(passwordSave)) {
-        alert("Senha não aceita, Digite pelo menos duas letras maiúsculas, duas letras minúsculas e dois números.");
+        alert("Senha não aceita, digite pelo menos um letra minuscula, uma letra maiúscula e um numero");
+        return
+    }
+    if (passwordSave.length < 6) {
+        alert("Senha não aceita, deve conter no minimo 6 caracteres")
         return
     }
 

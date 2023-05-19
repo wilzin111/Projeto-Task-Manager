@@ -1,0 +1,175 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 360px;
+    height: 640px;
+    background: #F6F2FF;
+    border-radius: 20px;
+}
+
+.container-CreateTask {
+    padding: 56px 37px 66px 39px;
+    display: block;
+}
+
+.container-seta-e-texto {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+}
+
+.container-seta-e-texto p {
+    width: 87px;
+    height: 10px;
+    margin-left: 12px;
+    margin-bottom: 33px;
+    color: #6368D9;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 21px;
+}
+
+.seta-de-retorno {
+    background-color: transparent;
+    border: none;
+}
+
+input {
+    margin-bottom: 13px;
+    border-radius: 20px;
+    border-color: #6368D9;
+    background-color: transparent;
+}
+
+input[id="title"] {
+    width: 284px;
+    height: 36px;
+}
+
+input[id="date"] {
+    width: 284px;
+    height: 36px;
+}
+
+.container-statiTime-endTime {
+    display: flex;
+}
+
+input[id="startTime"] {
+    width: 135px;
+    height: 36px;
+    margin-right: 12px;
+}
+
+input[id="endTime"] {
+    width: 135px;
+    height: 36px;
+}
+
+textarea {
+    border-radius: 20px;
+    border-color: #6368D9;
+    background-color: transparent;
+}
+
+textarea[id="description"] {
+    min-width: 284px;
+    min-height: 107px;
+    max-width: 284px;
+    max-height: 107px;
+    margin-bottom: 36px;
+}
+
+.label-title p {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 21px;
+    color: #6368D9;
+}
+
+button[id="college"] {
+    width: 100px;
+    height: 22px;
+    margin-top: 4px;
+}
+
+button[id="work"] {
+    width: 69px;
+    height: 22px;
+}
+
+button[id="social"] {
+    width: 105px;
+    height: 22px;
+}
+
+button[id="study"] {
+    width: 72px;
+    height: 22px;
+    margin-top: 4px;
+    margin-bottom: 13px;
+}
+
+button[id="personal"] {
+    width: 133px;
+    height: 22px;
+}
+
+button[id="home"] {
+    width: 71px;
+    height: 22px;
+}
+
+button[name="category"] {
+    border-radius: 30px;
+    background-color: #D1D0F9;
+    border: none;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 18px;
+    color: #6368D9;
+}
+
+button[name="category"].selected {
+    background-color: #6368D9;
+    color: white;
+    border: none;
+}
+
+.button-delete-save {
+    display: flex;
+    justify-content: center;
+}
+
+button[id="clearFields"] {
+    width: 39px;
+    height: 30px;
+    border-radius: 30px;
+    border: none;
+    margin-right: 9px;
+    background-color: #D1D0F9;
+}
+
+button[id="saveTask"] {
+    width: 157px;
+    height: 30px;
+    border-radius: 30px;
+    border: none;
+    background-color: #6368D9;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 18px;
+    color: #ffffff;
+}

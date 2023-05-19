@@ -12,7 +12,7 @@ body {
 }
 
 .container-CreateTask {
-    padding: 56px 37px 66px 39px;
+    padding: 40px 37px 53px 39px;
     display: block;
 }
 
@@ -43,7 +43,7 @@ body {
 input {
     margin-bottom: 13px;
     border-radius: 20px;
-    border-color: #6368D9;
+    border: 1px solid #6368D9;
     background-color: transparent;
 }
 
@@ -52,38 +52,46 @@ input[id="title"] {
     height: 36px;
 }
 
+input[id="date"] p {
+    margin-top: 0;
+}
+
 input[id="date"] {
     width: 284px;
     height: 36px;
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 20px;
+    padding-left: 18px;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0;
+    background: 13px url(/imagens/icone-calendario.png) no-repeat;
+}
+
+input[type='date']::-webkit-calendar-picker-indicator {
+    opacity: 0;
 }
 
 .container-statiTime-endTime {
     display: flex;
 }
 
-input[id="startTime"] {
+input[type='time']::-webkit-calendar-picker-indicator {
+    opacity: 0;
+}
+
+input[type="time"] {
     width: 135px;
     height: 36px;
-    margin-right: 12px;
-}
-
-input[id="endTime"] {
-    width: 135px;
-    height: 36px;
-}
-
-textarea {
-    border-radius: 20px;
-    border-color: #6368D9;
-    background-color: transparent;
-}
-
-textarea[id="description"] {
-    min-width: 284px;
-    min-height: 107px;
-    max-width: 284px;
-    max-height: 107px;
-    margin-bottom: 36px;
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 20px;
+    padding-left: 18px;
+    margin-bottom: 0;
+    justify-content: center;
+    align-items: center;
+    background: 13px url(/imagens/relogio-android-5.png) no-repeat;
 }
 
 .label-title p {
@@ -144,6 +152,20 @@ button[name="category"].selected {
     background-color: #6368D9;
     color: white;
     border: none;
+}
+
+textarea {
+    border-radius: 20px;
+    border-color: #6368D9;
+    background-color: transparent;
+}
+
+textarea[id="description"] {
+    min-width: 284px;
+    min-height: 107px;
+    max-width: 284px;
+    max-height: 107px;
+    margin-bottom: 36px;
 }
 
 .button-delete-save {

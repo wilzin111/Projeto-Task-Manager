@@ -62,6 +62,10 @@ function saveTask() {
         }
     }
 
+    if (startTime >= endTime) {
+        alert('A hora final deve ser maior que a hora inicial!');
+        return;
+    }
 
     // Salva a lista de tarefas no localStorage
     localStorage.setItem('tasks', JSON.stringify(tasks))

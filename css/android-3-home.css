@@ -1,0 +1,210 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 360px;
+    height: 640px;
+    background: #F6F2FF;
+    border-radius: 20px;
+}
+
+/* header */
+.container-home {
+    display: block;
+    padding: 38px 34px 20px 36px;
+}
+
+.header-home {
+    display: flex;
+}
+
+.name-user p {
+    width: 40px;
+    height: 10px;
+    margin-bottom: 10px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 21px;
+    color: #6368D9;
+}
+
+.name-user p:last-child {
+    width: 126px;
+    height: 10px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 21px;
+    color: #6368D9;
+}
+
+.header-home img {
+    max-width: 44px;
+    border-radius: 50%;
+    border: solid 1px #6368D9;
+    margin-right: 11px;
+}
+
+/* to Do taskCategory */
+.container-toDo-taskCategory {
+    padding-top: 30px;
+    padding-bottom: 10px;
+}
+
+.title-toDo p {
+    width: 204px;
+    height: 8px;
+    margin-bottom: 17px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 18px;
+    color: #6368D9;
+}
+
+.container-toDo {
+    width: 286px;
+    height: 149px;
+    border-radius: 20px;
+    margin-bottom: 16px;
+    padding: 25px 9px 17px 18px;
+    background: bottom right url(/imagens/diario-android-3-7.png) no-repeat #6368D9;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.container-toDo p {
+    width: 91px;
+    height: 7px;
+    margin-bottom: 9px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 10px;
+    line-height: 15px;
+    color: #F6F2FF;
+}
+
+.barra {
+    width: 242px;
+    height: 8px;
+    margin-bottom: 19px;
+    border-radius: 20px;
+    border: 1px solid #D1D0F9;
+}
+
+.barra-cheia {
+    width: 62.5%;
+    height: 8px;
+    border-radius: 20px;
+    display: block;
+    background-color: #D1D0F9;
+}
+
+
+.container-toDo h1 {
+    width: 135px;
+    height: 30px;
+    margin-bottom: 16px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 17px;
+    color: #F6F2FF;
+}
+
+.container-toDo a {
+    width: 80px;
+    height: 22px;
+    margin-bottom: 16px;
+    padding: 3px 18px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 10px;
+    line-height: 15px;
+    color: #6368D9;
+    background-color: #D1D0F9;
+}
+
+/* task categories */
+.TaskCategories {
+    margin-bottom: 16px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 18px;
+    color: #6368D9;
+}
+
+.container-taskCategory {
+    width: 291px;
+    height: 230px;
+    display: flex;
+}
+
+/* cards */
+.container-taskCategory p {
+    color: #6368D9;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 18px;
+}
+
+.categorys-1 {
+    display: flex;
+    flex-direction: column;
+    margin-right: 17px;
+}
+
+.container-category {
+    width: 137px;
+    height: 68px;
+    display: flex;
+    margin-bottom: 8px;
+    border-radius: 15px;
+    justify-content: center;
+    align-items: center;
+    background-color: #D1D0F9;
+}
+
+.container-text {
+    margin-right: 19px;
+}
+
+.container-text p {
+    margin-bottom: 0px;
+}
+
+.container-text p:first-child {
+    font-weight: 700;
+
+}
+
+/* footer */
+.footer-home {
+    width: 305px;
+    height: 44px;
+    display: flex;
+    justify-content: baseline;
+}
+
+.footer-home a {
+    margin-top: 22px;
+    margin-right: 37px;
+}
+
+/* .btn-criar-task-barra {
+} */

@@ -1,4 +1,4 @@
-export default function fazerLogin() {
+function fazerLogin() {
     var email = document.getElementById('Email').value
     var password = document.getElementById('senha').value
 
@@ -16,4 +16,3 @@ export default function fazerLogin() {
         alert("Email ou senha inválidos")
     }
 }
-

@@ -1,6 +1,11 @@
 // Função para salvar uma tarefa no localStorage
 function saveTask() {
 
+    var userLog = localStorage.getItem('usuarioLogado')
+    userLog = JSON.parse(userLog)
+
+    var currentDate = new Date().toISOString().split('T')[0];
+
     // Obtém os valores dos campos do formulário
     var title = document.getElementById('title').value
     var date = document.getElementById('date').value
@@ -22,6 +27,7 @@ function saveTask() {
 
     // Cria um objeto para representar a tarefa
     var task = {
+        email: userLog.email,
         title: title,
         date: date,
         startTime: startTime,
@@ -64,7 +70,12 @@ function saveTask() {
 
     if (startTime >= endTime) {
         alert('A hora final deve ser maior que a hora inicial!');
-        return;
+        return
+    }
+
+    if (date < currentDate) {
+        alert('A data não pode ser anterior à data atual!');
+        return
     }
 
     // Salva a lista de tarefas no localStorage
@@ -90,7 +101,7 @@ function getCategoryValue() {
 
         }
     }
-    return '';
+    return ''
 }
 
 // Função para limpar a seleção da categoria
@@ -107,7 +118,7 @@ for (var i = 0; i < categoryButtons.length; i++) {
     categoryButtons[i].addEventListener('click', function () {
         clearCategorySelection()
         this.classList.add('selected')
-    });
+    })
 }
 
 // Função para limpar os campos do formulário
@@ -119,6 +130,15 @@ function clearFields() {
     clearCategorySelection()
     document.getElementById('description').value = ''
 }
+
+function testLogado() {
+    var estaLogado = localStorage.getItem("usuarioLogado")
+
+    if (!estaLogado)
+        window.location.href = "android-2-login.html"
+}
+
+testLogado()
 
 // Botões para salvar e limpar os campos
 document.getElementById('saveTask').addEventListener('click', saveTask)

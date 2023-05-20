@@ -45,7 +45,10 @@ body {
 }
 
 .header-home img {
+    min-width: 44px;
+    min-height: 44px;
     max-width: 44px;
+    max-height: 44px;
     border-radius: 50%;
     border: solid 1px #6368D9;
     margin-right: 11px;
@@ -205,6 +208,3 @@ body {
     margin-top: 22px;
     margin-right: 37px;
 }
-
-/* .btn-criar-task-barra {
-} */

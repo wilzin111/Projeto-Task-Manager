@@ -11,6 +11,8 @@ function fazerLogin() {
     })
 
     if (perfilEncontrado) {
+        localStorage.setItem('usuarioLogado', JSON.stringify(perfilEncontrado));
+
         window.location.href = "android-3-home.html"
     } else {
         alert("Email ou senha inválidos")

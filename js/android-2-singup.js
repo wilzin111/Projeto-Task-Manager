@@ -28,7 +28,7 @@ file.addEventListener('change', () => {
 function salvarPerfil() {
     // Obtém o valor do campo de e-mail
     var emailSave = document.getElementById('Email').value
-    var imageSave = document.getElementById('FlImage').value
+    var imageSave = document.getElementById('img-perfil').src
     var nameSave = document.getElementById('Nome').value
     var occupationSave = document.getElementById('Occupation').value
     var passwordSave = document.getElementById('Senha').value

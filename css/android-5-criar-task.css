@@ -50,6 +50,7 @@ input {
 input[id="title"] {
     width: 284px;
     height: 36px;
+    padding-left: 5px;
 }
 
 input[id="date"] p {
@@ -75,6 +76,7 @@ input[type='date']::-webkit-calendar-picker-indicator {
 
 .container-statiTime-endTime {
     display: flex;
+    gap: 12px;
 }
 
 input[type='time']::-webkit-calendar-picker-indicator {
@@ -166,6 +168,8 @@ textarea[id="description"] {
     max-width: 284px;
     max-height: 107px;
     margin-bottom: 36px;
+    padding-top: 5px;
+    padding-left: 5px;
 }
 
 .button-delete-save {

@@ -67,7 +67,7 @@ function saveTask() {
         return
     }
 
-    if (date >= atualDate) {
+    if (date < atualDate) {
         alert('A data não pode ser anterior à data atual!');
         return
     }

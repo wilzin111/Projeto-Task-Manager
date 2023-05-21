@@ -1,0 +1,173 @@
+/* top */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 360px;
+    height: 640px;
+    background-color: #F6F2FF;
+    border-radius: 20px;
+}
+
+.container-user-edit {
+    padding: 56px 35px 20px 36px;
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    color: #6368D9;
+}
+
+.container-user-edit h1 {
+    width: 48px;
+    height: 10px;
+    margin-bottom: 28px;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 21px;
+}
+
+.header-user-edit {
+    display: flex;
+}
+
+.name-user p[id="name-usuario"] {
+    width: 126px;
+    height: 15px;
+    margin-top: 20px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 15px;
+    color: #6368D9;
+}
+
+.name-user p[id="occupation-usuario"] {
+    width: 126px;
+    height: 26px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+    color: #6368D9;
+
+}
+
+.name-user a {
+    width: 101px;
+    height: 20px;
+    padding: 4px 21px 4px 25px;
+    background-color: #D1D0F9;
+    color: #6368D9;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 10px;
+    line-height: 15px;
+    border-radius: 20px;
+}
+
+.header-user-edit img {
+    min-width: 100px;
+    min-height: 100px;
+    max-width: 100px;
+    max-height: 100px;
+    margin-bottom: 40px;
+    border-radius: 50%;
+    border: solid 1px #6368D9;
+    margin-right: 22px;
+}
+
+/* center */
+
+.container-card {
+    width: 286px;
+    height: 149px;
+    border-radius: 20px;
+    margin-bottom: 16px;
+    padding: 25px 9px 17px 18px;
+    background: center left 179px url(/imagens/diario-android-3-7.png) no-repeat #6368D9;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.container-card p {
+    width: 91px;
+    height: 7px;
+    margin-bottom: 24px;
+    font-weight: 700;
+    font-size: 10px;
+    line-height: 15px;
+    color: #F6F2FF;
+}
+
+.container-card h1 {
+    width: 156px;
+    height: 30px;
+    margin-bottom: 25px;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 17px;
+    color: #F6F2FF;
+}
+
+.container-card a {
+    width: 80px;
+    height: 22px;
+    margin-bottom: 16px;
+    padding: 3px 18px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 10px;
+    line-height: 15px;
+    color: #6368D9;
+    background-color: #D1D0F9;
+}
+
+/* pós card */
+.log-out {
+    display: flex;
+    flex-direction: column;
+    height: 122px;
+    gap: 7px;
+    margin-bottom: 53px;
+}
+
+button {
+    width: 288px;
+    height: 36px;
+    justify-content: start;
+    align-items: center;
+    display: flex;
+    padding-left: 17px;
+    background-color: #D1D0F9;
+    border: none;
+    border-radius: 30px;
+}
+
+button p {
+    padding-left: 7px;
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+    color: #6368D9;
+}
+
+/* footer */
+.footer-user-edit {
+    width: 305px;
+    height: 44px;
+    display: flex;
+    justify-content: baseline;
+}
+
+.footer-user-edit a {
+    margin-top: 22px;
+    margin-right: 37px;
+}

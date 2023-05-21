@@ -15,7 +15,7 @@ body {
 
 .container-agenda {
     padding: 60px 34px 20px 37px;
-    font-family: 'Poppins';
+    font-family: 'Poppins', sans-serif;
     font-style: normal;
     color: #6368D9;
 }
@@ -85,7 +85,8 @@ button[id="text-selected"].selected {
 .container-task-position {
     margin-top: 25px;
     margin-bottom: 24px;
-    min-height: 332px;
+    width: 286px;
+    height: 332px;
     overflow: scroll;
 }
 
@@ -96,6 +97,7 @@ button[id="text-selected"].selected {
 .test {
     width: 286px;
     height: 77px;
+    margin-bottom: 8px;
     padding: 12px 36px 15px 18px;
     border-radius: 15px;
     background: bottom 15px left 20px url(/imagens/relogio-android-4.png) no-repeat #D1D0F9;

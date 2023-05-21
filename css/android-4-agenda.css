@@ -1,0 +1,135 @@
+/* top */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 360px;
+    height: 640px;
+    background-color: #F6F2FF;
+    border-radius: 20px;
+}
+
+
+.container-agenda {
+    padding: 60px 34px 20px 37px;
+    font-family: 'Poppins';
+    font-style: normal;
+    color: #6368D9;
+}
+
+.container-calendario p {
+    width: 95px;
+    height: 10px;
+    margin-bottom: 21px;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 21px;
+}
+
+.container-datas {
+    width: 323px;
+    height: 53px;
+    display: flex;
+    gap: 5px;
+    overflow: scroll;
+}
+
+.container-datas::-webkit-scrollbar {
+    display: none;
+}
+
+.card {
+    min-width: 45px;
+    height: 53px;
+    background-color: #D1D0F9;
+    color: #F6F2FF;
+    border-radius: 10px;
+    border: none;
+}
+
+button[id="data-selected"].selected {
+    background-color: #6368D9;
+    color: white;
+    border: none;
+}
+
+.container-btns {
+    gap: 6px;
+}
+
+.text-btn:first-child {
+    width: 80px;
+    margin-top: 25px;
+}
+
+.text-btn {
+    width: 100px;
+    height: 22px;
+    background-color: #D1D0F9;
+    color: #F6F2FF;
+    border-radius: 30px;
+    border: none;
+}
+
+button[id="text-selected"].selected {
+    background-color: #6368D9;
+    color: white;
+    border: none;
+}
+
+/* center */
+
+.container-task-position {
+    margin-top: 25px;
+    margin-bottom: 24px;
+    min-height: 332px;
+    overflow: scroll;
+}
+
+.container-task-position::-webkit-scrollbar {
+    display: none;
+}
+
+.test {
+    width: 286px;
+    height: 77px;
+    padding: 12px 36px 15px 18px;
+    border-radius: 15px;
+    background: bottom 15px left 20px url(/imagens/relogio-android-4.png) no-repeat #D1D0F9;
+}
+
+.test p {
+    font-style: italic;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 18px;
+}
+
+.test h1 {
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 18px;
+}
+
+.test h2 {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 18px;
+    padding-left: 22px;
+}
+
+/* footer */
+.footer-agenda {
+    width: 305px;
+    height: 44px;
+    display: flex;
+    justify-content: baseline;
+}
+
+.footer-agenda a {
+    margin-top: 22px;
+    margin-right: 37px;
+}

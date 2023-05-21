@@ -1,0 +1,121 @@
+/* top */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 360px;
+    height: 640px;
+    background-color: #F6F2FF;
+    border-radius: 20px;
+}
+
+.container-notif {
+    padding: 45px 35px 20px 36px;
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    color: #6368D9;
+}
+
+.container-notif h1 {
+    width: 96px;
+    height: 10px;
+    margin-bottom: 30px;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 21px;
+}
+
+.container-notif p {
+    width: 46px;
+    height: 10px;
+    margin-bottom: 15px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 21px;
+}
+
+.container-notif p[id="yesterday"] {
+    padding: 15px 0;
+}
+
+/* today */
+.container-today {
+    width: 288px;
+    height: 285px;
+    overflow: scroll;
+}
+
+.test {
+    width: 288px;
+    height: 66px;
+    margin-bottom: 7px;
+    padding: 8px 25px 15px 14px;
+    border-radius: 15px;
+    background-color: #D1D0F9;
+}
+
+.test p {
+    width: 62px;
+    height: 2px;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 15px;
+}
+
+.test h1 {
+    width: 249px;
+    height: 23px;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+}
+
+/* yesterday */
+.container-yesterday {
+    width: 288px;
+    height: 130px;
+    overflow: scroll;
+}
+
+.test-yesterday {
+    width: 288px;
+    height: 66px;
+    margin-bottom: 7px;
+    padding: 8px 25px 15px 14px;
+    border-radius: 15px;
+    background-color: #D1D0F9;
+}
+
+.test-yesterday p {
+    width: 62px;
+    height: 2px;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 15px;
+}
+
+.test-yesterday h1 {
+    width: 249px;
+    height: 23px;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+}
+
+/* footer */
+.footer-user-edit {
+    width: 305px;
+    height: 44px;
+    display: flex;
+    justify-content: baseline;
+}
+
+.footer-user-edit a {
+    margin-top: 22px;
+    margin-right: 37px;
+}

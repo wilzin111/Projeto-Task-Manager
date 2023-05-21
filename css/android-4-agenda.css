@@ -41,7 +41,7 @@ body {
     display: none;
 }
 
-.card {
+.cardClass {
     min-width: 45px;
     height: 53px;
     background-color: #D1D0F9;
@@ -74,7 +74,7 @@ button[id="data-selected"].selected {
     border: none;
 }
 
-button[id="text-selected"].selected {
+button[id="text-selected"].selected-ativo {
     background-color: #6368D9;
     color: white;
     border: none;
@@ -83,10 +83,11 @@ button[id="text-selected"].selected {
 /* center */
 
 .container-task-position {
-    margin-top: 25px;
-    margin-bottom: 24px;
     width: 286px;
     height: 332px;
+    margin-top: 25px;
+    margin-bottom: 24px;
+    flex-direction: column;
     overflow: scroll;
 }
 

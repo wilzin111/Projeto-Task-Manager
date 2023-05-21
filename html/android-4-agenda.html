@@ -20,35 +20,35 @@
     <div class="container-agenda">
         <div class="container-calendario">
             <p>Today’s task</p>
-            <div class="container-datas">
-                <button id="data-selected" class="card">1</button>
-                <button id="data-selected" class="card">2</button>
-                <button id="data-selected" class="card">3</button>
-                <button id="data-selected" class="card">4</button>
-                <button id="data-selected" class="card">5</button>
-                <button id="data-selected" class="card">6</button>
-                <button id="data-selected" class="card">7</button>
-                <button id="data-selected" class="card">8</button>
-                <button id="data-selected" class="card">9</button>
-                <button id="data-selected" class="card">10</button>
-                <button id="data-selected" class="card">11</button>
+            <div class="container-datas" id="calendarID">
+                <button id="data-selected" class="cardClass"></button>
+                <button id="data-selected" class="cardClass"></button>
+                <button id="data-selected" class="cardClass"></button>
+                <button id="data-selected" class="cardClass selected"></button>
+                <button id="data-selected" class="cardClass"></button>
+                <button id="data-selected" class="cardClass"></button>
+                <button id="data-selected" class="cardClass"></button>
+                <button id="data-selected" class="cardClass"></button>
+                <button id="data-selected" class="cardClass"></button>
+                <button id="data-selected" class="cardClass"></button>
+                <button id="data-selected" class="cardClass"></button>
             </div>
         </div>
 
         <div class="container-btns">
-            <button class="text-btn" id="text-selected">To Do</button>
-            <button class="text-btn" id="text-selected">In progress</button>
-            <button class="text-btn" id="text-selected">Completed</button>
+            <button name="name-toDo" class="text-btn selected-ativo" id="text-selected">To Do</button>
+            <button name="name-inProgress" class="text-btn" id="text-selected">In progress</button>
+            <button name="name-completed" class="text-btn" id="text-selected">Completed</button>
         </div>
 
-        <div class="container-task-position">
-            <div class="test">
+        <div class="container-task-position" id="toDo" style="display: flex;"></div>
+        <div class="container-task-position" id="inProgress" style="display: none;"></div>
+        <div class="container-task-position" id="completed" style="display: none;"></div>
+        <!-- <div class="test">
                 <p>College stuff</p>
                 <h1>Design and Documentation meeting</h1>
                 <h2>15.00 pm - 16.00 pm</h2>
-            </div>
-        </div>
-
+            </div> -->
         <div class="footer-agenda">
             <a href="android-3-home.html">
                 <img src="/imagens/icone-home-sem-cor.png" alt="">
@@ -61,7 +61,7 @@
                     <img src="/imagens/btn-criar-task.png" alt="">
                 </a>
             </div class="btn-criar-task-barra">
-            <a href="#">
+            <a href="android-6-notif.html">
                 <img src="/imagens/icone-notif.png" alt="">
             </a>
             <a href="android-7-edit-user.html">

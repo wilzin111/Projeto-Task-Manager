@@ -19,3 +19,8 @@ function passImgName() {
     occupationUsuario.innerHTML = photo.occupation
 }
 passImgName()
+
+function logOut() {
+    localStorage.removeItem('usuarioLogado')
+    window.location.href = 'android-2-login.html'
+}

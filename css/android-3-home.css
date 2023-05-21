@@ -34,7 +34,7 @@ body {
 }
 
 .name-user p:last-child {
-    width: 126px;
+    width: auto;
     height: 10px;
     font-family: 'Poppins';
     font-style: normal;

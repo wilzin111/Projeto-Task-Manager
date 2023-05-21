@@ -33,7 +33,7 @@ body {
 }
 
 .name-user p[id="name-usuario"] {
-    width: 126px;
+    width: auto;
     height: 15px;
     margin-top: 20px;
     font-family: 'Poppins';

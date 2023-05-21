@@ -4,7 +4,7 @@ function saveTask() {
     var userLog = localStorage.getItem('usuarioLogado')
     userLog = JSON.parse(userLog)
 
-    var currentDate = new Date().toISOString().split('T')[0];
+    var atualDate = new Date().toISOString().split('T')[0];
 
     // Obtém os valores dos campos do formulário
     var title = document.getElementById('title').value
@@ -57,15 +57,9 @@ function saveTask() {
         return
     }
     // Verificar se alguma categoria está selecionada
-    for (const categoryButton of categoryButtons) {
-        if (categoryButton.checked) {
-            selectedCategory = categoryButton.value;
-            break
-        }
-        if (!category) {
-            alert('Selecione uma categoria!')
-            return
-        }
+    if (category === '') {
+        alert('Selecione uma categoria')
+        return
     }
 
     if (startTime >= endTime) {
@@ -73,7 +67,7 @@ function saveTask() {
         return
     }
 
-    if (date < currentDate) {
+    if (date >= atualDate) {
         alert('A data não pode ser anterior à data atual!');
         return
     }
@@ -94,12 +88,10 @@ function saveTask() {
 
 // Função para obter o valor da categoria selecionada
 function getCategoryValue() {
-    var categoryButtons = document.querySelectorAll('button[name="category"]')
-    for (var i = 0; i < categoryButtons.length; i++) {
-        if (categoryButtons[i].classList.contains('selected')) {
-            return categoryButtons[i].value
+    var categoryButtons = document.querySelector('button[name="category"].selected')
+    if (categoryButtons) {
+        return categoryButtons.innerText.trim()
 
-        }
     }
     return ''
 }

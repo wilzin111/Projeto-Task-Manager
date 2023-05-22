@@ -6,6 +6,69 @@ function testLogado() {
 }
 testLogado()
 
+
+
+// -----------------------------------------------------------------------------------------
+var selectedDate = null;
+
+
+function calendar() {
+    var calendario = document.getElementById('calendarID');
+    var dias = calendario.getElementsByClassName("cardClass");
+    var dayDate = new Date();
+    dayDate.setDate(dayDate.getDate() - 3);
+
+    var meses = [
+        'Jan',
+        'Feb',
+        'Mar',
+        'Apr',
+        'May',
+        'Jun',
+        'Jul',
+        'Aug',
+        'Sep',
+        'Oct',
+        'Nov',
+        'Dec'
+    ];
+
+    for (let i = 0; i < dias.length; i++) {
+        var dia = dias[i];
+        var getMes = meses[dayDate.getMonth()];
+        var getDay = dayDate.getDate();
+        dia.innerHTML = getMes + "<br>" + getDay;
+
+        dayDate.setDate(getDay + 1);
+
+        if (i >= 11) {
+            break;
+        }
+
+        dia.addEventListener('click', function () {
+            var year = this.getAttribute('data-year');
+            var month = this.getAttribute('data-month');
+            var day = this.getAttribute('data-day');
+
+            if (day <= 9) {
+                day = '0' + day
+            }
+            if (month <= 9) {
+                month = '0' + month
+            }
+            compData = year + '-' + month + '-' + day
+            var compData = localStorage.setItem('dataSelecionada', compData)
+            showTascks()
+        });
+
+        dia.setAttribute('data-year', dayDate.getFullYear());
+        dia.setAttribute('data-month', dayDate.getMonth() + 1);
+        dia.setAttribute('data-day', dayDate.getDate() - 1);
+    }
+}
+
+
+calendar()
 function clearDataSelection() {
     var dataButtons = document.querySelectorAll('button[id="data-selected"]')
     for (var i = 0; i < dataButtons.length; i++) {
@@ -36,48 +99,12 @@ for (var i = 0; i < textButtons.length; i++) {
     })
 }
 
-function calendar() {
-    var calendario = document.getElementById('calendarID')
-    var dias = calendario.getElementsByClassName("cardClass")
-    let dayDate = new Date()
-    dayDate.setDate(dayDate.getDate() - 3)
-
-    var meses = [
-        'Jan',
-        'Feb',
-        'Mar',
-        'Apr',
-        'May',
-        'Jun',
-        'Jul',
-        'Aug',
-        'Sep',
-        'Oct',
-        'Nov',
-        'Dec'
-    ]
-
-    for (let i = 0; i < dias.length; i++) {
-        var dia = dias[i];
-        var getMes = meses[dayDate.getMonth()]
-        var getDay = dayDate.getDate()
-        dia.innerHTML = getMes + "<br>" + getDay
-
-        dayDate.setDate(getDay + 1)
-
-        if (i >= 11) {
-            break
-        }
-    }
-
-}
-calendar()
-
 
 function showTascks() {
     let userActiv = localStorage.getItem("usuarioLogado");
     userActiv = JSON.parse(userActiv)
 
+    var dataSelec = localStorage.getItem('dataSelecionada')
     var tasks = JSON.parse(localStorage.getItem("tasks")) || [];
     var allDate = new Date()
     var dayDate = allDate.getDate()
@@ -89,19 +116,28 @@ function showTascks() {
     if (mesDate <= 9) {
         mesDate = '0' + mesDate
     }
+
     var datecomp = year + '-' + mesDate + '-' + dayDate
     var getHour = allDate.getHours();
+
     if (getHour <= 9) {
         getHour = '0' + getHour
     }
+
     var getMinutes = allDate.getMinutes();
     if (getMinutes <= 9) {
         getMinutes = '0' + getMinutes
     }
+
     var hourPlusMinutes = getHour + ":" + getMinutes;
-    const containerToDo = document.getElementById("toDo");
-    const containerInProgress = document.getElementById("inProgress")
-    const containerCompleted = document.getElementById("completed")
+    let containerToDo = document.getElementById("toDo");
+    let containerInProgress = document.getElementById("inProgress")
+    let containerCompleted = document.getElementById("completed")
+
+    containerToDo.innerHTML = ''
+    containerInProgress.innerHTML = ''
+    containerCompleted.innerHTML = ''
+
     var cont_completed = 0
     var cont_toDo = 0
     var cont_inProgress = 0
@@ -130,8 +166,51 @@ function showTascks() {
             horaFinal += " pm";
         }
 
-        if (date == datecomp) {
+        if (date > datecomp && date === dataSelec) {
+
+            if (date === dataSelec) {
+                console.log('todo');
+                let element = document.createElement("div");
+                element.className = "test";
+                element.innerHTML =
+                    "<p>" +
+                    category +
+                    "</p>" +
+                    "<h1>" +
+                    title +
+                    "</h1>" +
+                    "<h2>" +
+                    horaInicial +
+                    " - " +
+                    horaFinal +
+                    "</h2>";
+                containerToDo.appendChild(element);
+            }
+        }
+        if (date < datecomp && date === dataSelec) {
+            total_completed++
+            if (date === dataSelec) {
+                console.log('completed');
+                let element = document.createElement("div");
+                element.className = "test";
+                element.innerHTML =
+                    "<p>" +
+                    category +
+                    "</p>" +
+                    "<h1>" +
+                    title +
+                    "</h1>" +
+                    "<h2>" +
+                    horaInicial +
+                    " - " +
+                    horaFinal +
+                    "</h2>";
+                containerCompleted.appendChild(element);
+            }
+        }
+        if (date === datecomp && date === dataSelec) {
             if (horaInicial > hourPlusMinutes) {
+                console.log('todo2');
                 cont_toDo++
                 let element = document.createElement("div");
                 element.className = "test";
@@ -152,6 +231,7 @@ function showTascks() {
 
             if (horaInicial <= hourPlusMinutes && horaFinal >= hourPlusMinutes) {
                 cont_inProgress++
+                console.log('improgresso');
                 let element = document.createElement("div");
                 element.className = "test";
                 element.innerHTML =
@@ -170,6 +250,7 @@ function showTascks() {
             }
 
             if (hourPlusMinutes > horaFinal) {
+                console.log('completed2');
                 cont_completed++
                 let element = document.createElement("div");
                 element.className = "test";
@@ -188,46 +269,9 @@ function showTascks() {
                 containerCompleted.appendChild(element);
             }
         }
-        if (date > datecomp) {
-            if (date == datecomp) {
-                let element = document.createElement("div");
-                element.className = "test";
-                element.innerHTML =
-                    "<p>" +
-                    category +
-                    "</p>" +
-                    "<h1>" +
-                    title +
-                    "</h1>" +
-                    "<h2>" +
-                    horaInicial +
-                    " - " +
-                    horaFinal +
-                    "</h2>";
-                containerToDo.appendChild(element);
-            }
-        }
 
-        if (date < datecomp) {
-            total_completed++
-            if (date == datecomp) {
-                let element = document.createElement("div");
-                element.className = "test";
-                element.innerHTML =
-                    "<p>" +
-                    category +
-                    "</p>" +
-                    "<h1>" +
-                    title +
-                    "</h1>" +
-                    "<h2>" +
-                    horaInicial +
-                    " - " +
-                    horaFinal +
-                    "</h2>";
-                containerCompleted.appendChild(element);
-            }
-        }
+
+
     })
     quantia_toDo = ((cont_toDo + cont_inProgress) / (cont_toDo + cont_inProgress + cont_completed)) * 100
     quantia_toDo = 100 - quantia_toDo

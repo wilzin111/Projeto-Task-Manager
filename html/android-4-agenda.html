@@ -24,7 +24,7 @@
                 <button id="data-selected" class="cardClass"></button>
                 <button id="data-selected" class="cardClass"></button>
                 <button id="data-selected" class="cardClass"></button>
-                <button id="data-selected" class="cardClass selected"></button>
+                <button id="data-selected" class="cardClass selected" name="clickStart"></button>
                 <button id="data-selected" class="cardClass"></button>
                 <button id="data-selected" class="cardClass"></button>
                 <button id="data-selected" class="cardClass"></button>
@@ -72,6 +72,10 @@
     <script>
         showTascks()
         transferDisplay()
+
+        var btn = document.getElementsByName('clickStart')
+        btn[0].click()
+
     </script>
 </body>
 

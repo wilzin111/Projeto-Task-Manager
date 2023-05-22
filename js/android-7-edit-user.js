@@ -37,7 +37,7 @@ function qtdTask() {
     var idp = document.getElementById('trueOrFalse')
 
     if (completed == 0) {
-        idp.innerHTML = 'Sorry!'
+        idp.innerHTML = 'Ops!'
         idH1.innerHTML = 'you do not have complete tasks'
     } else {
         idp.innerHTML = 'Amazing!'

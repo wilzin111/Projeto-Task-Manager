@@ -22,16 +22,13 @@ file.addEventListener('change', () => {
 })
 
 function atualizarPerfil() {
-    // Obtém o usuário logado do localStorage
     var usuarioLogado = JSON.parse(localStorage.getItem('usuarioLogado'));
 
-    // Obtém os campos do formulário atualizado
     var imageSave = document.getElementById('img-perfil').src
     var nome = document.getElementById('Nome').value;
     var ocupacao = document.getElementById('Occupation').value;
     var senha = document.getElementById('Senha').value;
 
-    // Verifica se os campos são válidos
     if (nome.trim() === '') {
         alert('Adicione um nome');
         return;
@@ -42,8 +39,8 @@ function atualizarPerfil() {
         return;
     }
 
-    if (senha.trim() === '') {
-        alert('Digite a senha atual');
+    if (!senhaValida(senha)) {
+        alert('A senha deve ter pelo menos 6 caracteres, incluir pelo menos uma letra maiúscula, uma letra minúscula e um número.');
         return;
     }
 
@@ -67,4 +64,9 @@ function atualizarPerfil() {
     document.getElementById('Nome').value = '';
     document.getElementById('Occupation').value = '';
     document.getElementById('Senha').value = '';
+}
+
+function senhaValida(senha) {
+    var regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{6,}$/;
+    return regex.test(senha);
 }

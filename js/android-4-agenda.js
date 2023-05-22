@@ -273,6 +273,9 @@ function showTascks() {
 
 
     })
+    var totalTask = localStorage.getItem("totalTask")
+    var qtdCompleted = totalTask - (cont_toDo + cont_inProgress)
+    localStorage.setItem('qtdCompleted', qtdCompleted)
     quantia_toDo = ((cont_toDo + cont_inProgress) / (cont_toDo + cont_inProgress + cont_completed)) * 100
     quantia_toDo = 100 - quantia_toDo
 

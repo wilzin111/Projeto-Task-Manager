@@ -22,14 +22,20 @@ passImgName()
 
 function logOut() {
     localStorage.removeItem('usuarioLogado')
+    localStorage.removeItem('totalCompleted')
+    localStorage.removeItem('percentCompleted')
+    localStorage.removeItem('toDo')
+    localStorage.removeItem('dataSelecionada')
+    localStorage.removeItem('qtdCompleted')
+    localStorage.removeItem('totalTask')
     window.location.href = 'android-2-login.html'
 }
 
 function qtdTask() {
-    var completed = localStorage.getItem('totalCompleted')
+    var completed = localStorage.getItem('qtdCompleted')
     var idH1 = document.getElementById('qtd-tasks')
     var idp = document.getElementById('trueOrFalse')
-    console.log(completed);
+
     if (completed == 0) {
         idp.innerHTML = 'Sorry!'
         idH1.innerHTML = 'you do not have complete tasks'

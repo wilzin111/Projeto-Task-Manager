@@ -34,7 +34,7 @@ function passValueCategory() {
     var social = 0
     var personal = 0
     var home = 0
-
+    var totalTasks = 0
     // Filtra as tarefas do usuário logado
     var userTasks = tasks.filter(function (tasks) {
         return tasks.email === usuarioLogado.email
@@ -62,8 +62,10 @@ function passValueCategory() {
         if (category === "Home") {
             return home++;
         }
-    });
 
+    });
+    totalTasks = college + study + work + social + personal + home
+    localStorage.setItem("totalTask", totalTasks)
     collegeText.innerHTML = college + " tasks"
     workText.innerHTML = work + " tasks"
     studyText.innerHTML = study + " tasks"
@@ -80,14 +82,20 @@ function funcBar() {
     var IDh1 = document.getElementById('qtdToDo')
     var bar = document.getElementById('barraCrescente')
 
+    if (isNaN(percentCompleted) || percentCompleted == null) {
+        IDp.innerHTML = 'No have tasks'
+        bar.style.width = '0'
+    } else {
+        IDp.innerHTML = percentCompleted + '% complete'
+        bar.style.width = percentCompleted + '%'
+    }
 
-    IDp.innerHTML = percentCompleted + '% complete'
 
-    bar.style.width = percentCompleted + '%'
-
-    if (qtd == 0) {
+    if (isNaN(qtd) || qtd == null) {
+        IDh1.innerHTML = 'You no have tasks!'
+    } else if (qtd === '0') {
         IDh1.innerHTML = 'You have no more tasks to do!'
-    } else if (qtd == 1) {
+    } else if (qtd === '1') {
         IDh1.innerHTML = 'You have ' + 1 + ' task to do!'
     } else {
         IDh1.innerHTML = 'You have ' + qtd + ' tasks to do!'

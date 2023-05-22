@@ -4,7 +4,10 @@ function saveTask() {
     var userLog = localStorage.getItem('usuarioLogado')
     userLog = JSON.parse(userLog)
 
-    var atualDate = new Date().toISOString().split('T')[0];
+    var allDate = new Date()
+    var atualDate = allDate.getDay()
+
+
 
     // Obtém os valores dos campos do formulário
     var title = document.getElementById('title').value

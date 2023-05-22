@@ -24,3 +24,21 @@ function logOut() {
     localStorage.removeItem('usuarioLogado')
     window.location.href = 'android-2-login.html'
 }
+
+function qtdTask() {
+    var completed = localStorage.getItem('totalCompleted')
+    var idH1 = document.getElementById('qtd-tasks')
+    var idp = document.getElementById('trueOrFalse')
+    console.log(completed);
+    if (completed == 0) {
+        idp.innerHTML = 'Sorry!'
+        idH1.innerHTML = 'you do not have complete tasks'
+    } else {
+        idp.innerHTML = 'Amazing!'
+        idH1.innerHTML = 'You have completed ' + completed + ' task!'
+    }
+
+
+}
+
+qtdTask()

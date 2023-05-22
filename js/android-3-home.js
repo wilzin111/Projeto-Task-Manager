@@ -17,9 +17,6 @@ function passImgName() {
 }
 passImgName()
 
-
-
-
 function passValueCategory() {
     var tasks = JSON.parse(localStorage.getItem("tasks")) || [];
     var usuarioLogado = localStorage.getItem("usuarioLogado")
@@ -75,3 +72,25 @@ function passValueCategory() {
     homeText.innerHTML = home + " tasks"
 }
 passValueCategory()
+
+function funcBar() {
+    var percentCompleted = localStorage.getItem('percentCompleted')
+    var qtd = localStorage.getItem('toDo')
+    var IDp = document.getElementById('porcentCompleted')
+    var IDh1 = document.getElementById('qtdToDo')
+    var bar = document.getElementById('barraCrescente')
+
+
+    IDp.innerHTML = percentCompleted + '% complete'
+
+    bar.style.width = percentCompleted + '%'
+
+    if (qtd == 0) {
+        IDh1.innerHTML = 'You have no more tasks to do!'
+    } else if (qtd == 1) {
+        IDh1.innerHTML = 'You have ' + 1 + ' task to do!'
+    } else {
+        IDh1.innerHTML = 'You have ' + qtd + ' tasks to do!'
+    }
+}
+funcBar()

@@ -4,7 +4,6 @@ function testLogado() {
     if (!estaLogado)
         window.location.href = "android-2-login.html"
 }
-
 testLogado()
 
 function clearDataSelection() {
@@ -77,13 +76,28 @@ calendar()
 
 function showTascks() {
     let userActiv = localStorage.getItem("usuarioLogado");
-    userActiv = JSON.parse(userActiv);
+    userActiv = JSON.parse(userActiv)
 
     var tasks = JSON.parse(localStorage.getItem("tasks")) || [];
-    var dayDate = new Date().toISOString().split("T")[0];
-    var allDate = new Date();
+    var allDate = new Date()
+    var dayDate = allDate.getDate()
+    var mesDate = allDate.getMonth() + 1
+    var year = allDate.getFullYear()
+    if (dayDate <= 9) {
+        dayDate = '0' + dayDate
+    }
+    if (mesDate <= 9) {
+        mesDate = '0' + mesDate
+    }
+    var datecomp = year + '-' + mesDate + '-' + dayDate
     var getHour = allDate.getHours();
+    if (getHour <= 9) {
+        getHour = '0' + getHour
+    }
     var getMinutes = allDate.getMinutes();
+    if (getMinutes <= 9) {
+        getMinutes = '0' + getMinutes
+    }
     var hourPlusMinutes = getHour + ":" + getMinutes;
     const containerToDo = document.getElementById("toDo");
     const containerInProgress = document.getElementById("inProgress")
@@ -116,7 +130,7 @@ function showTascks() {
             horaFinal += " pm";
         }
 
-        if (date === dayDate) {
+        if (date == datecomp) {
             if (horaInicial > hourPlusMinutes) {
                 cont_toDo++
                 let element = document.createElement("div");
@@ -174,8 +188,8 @@ function showTascks() {
                 containerCompleted.appendChild(element);
             }
         }
-        if (date > dayDate) {
-            if (date === dayDate) {
+        if (date > datecomp) {
+            if (date == datecomp) {
                 let element = document.createElement("div");
                 element.className = "test";
                 element.innerHTML =
@@ -194,9 +208,9 @@ function showTascks() {
             }
         }
 
-        if (date < dayDate) {
+        if (date < datecomp) {
             total_completed++
-            if (date === dayDate) {
+            if (date == datecomp) {
                 let element = document.createElement("div");
                 element.className = "test";
                 element.innerHTML =
@@ -219,7 +233,34 @@ function showTascks() {
     quantia_toDo = 100 - quantia_toDo
 
     localStorage.setItem("toDo", cont_toDo)
-    localStorage.setItem("percentCompleted", quantia_toDo)
+    localStorage.setItem("percentCompleted", parseFloat(quantia_toDo.toFixed(2)))
     localStorage.setItem("totalCompleted", cont_completed + total_completed)
 }
-showTascks()
+
+function transferDisplay() {
+    let classBtn = document.querySelectorAll(".container-btns button"); //btns
+    var toDo = document.getElementById("toDo");  //
+    var inProgress = document.getElementById("inProgress"); //
+    var completed = document.getElementById("completed"); //container3
+
+    classBtn.forEach(function (button) {
+        button.addEventListener("click", function () {
+            console.log(button.name);
+            if (button.name === "toDo") {
+                toDo.style.display = "flex";
+                inProgress.style.display = "none";
+                completed.style.display = "none";
+            }
+            if (button.name === "inProgress") {
+                toDo.style.display = "none";
+                inProgress.style.display = "flex";
+                completed.style.display = "none";
+            }
+            if (button.name === "completed") {
+                toDo.style.display = "none";
+                inProgress.style.display = "none";
+                completed.style.display = "flex";
+            }
+        });
+    })
+};

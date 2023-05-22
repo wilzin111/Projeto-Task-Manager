@@ -36,19 +36,17 @@
         </div>
 
         <div class="container-btns">
-            <button name="name-toDo" class="text-btn selected-ativo" id="text-selected">To Do</button>
-            <button name="name-inProgress" class="text-btn" id="text-selected">In progress</button>
-            <button name="name-completed" class="text-btn" id="text-selected">Completed</button>
+            <button onclick="transferDisplay()" name="toDo" class="text-btn selected-ativo" id="text-selected">To
+                Do</button>
+            <button onclick="transferDisplay()" name="inProgress" class="text-btn" id="text-selected">In
+                progress</button>
+            <button onclick="transferDisplay()" name="completed" class="text-btn" id="text-selected">Completed</button>
         </div>
 
         <div class="container-task-position" id="toDo" style="display: flex;"></div>
         <div class="container-task-position" id="inProgress" style="display: none;"></div>
         <div class="container-task-position" id="completed" style="display: none;"></div>
-        <!-- <div class="test">
-                <p>College stuff</p>
-                <h1>Design and Documentation meeting</h1>
-                <h2>15.00 pm - 16.00 pm</h2>
-            </div> -->
+
         <div class="footer-agenda">
             <a href="android-3-home.html">
                 <img src="/imagens/icone-home-sem-cor.png" alt="">
@@ -71,6 +69,10 @@
     </div>
 
     <script src="/js/android-4-agenda.js"></script>
+    <script>
+        showTascks()
+        transferDisplay()
+    </script>
 </body>
 
 </html>

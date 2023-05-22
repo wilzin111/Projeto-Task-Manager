@@ -75,7 +75,93 @@ function passValueCategory() {
 }
 passValueCategory()
 
+
+function showTascks() {
+    let userActiv = localStorage.getItem("usuarioLogado");
+    userActiv = JSON.parse(userActiv)
+
+    var tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+    var allDate = new Date()
+    var dayDate = allDate.getDate()
+    var mesDate = allDate.getMonth() + 1
+    var year = allDate.getFullYear()
+    if (dayDate <= 9) {
+        dayDate = '0' + dayDate
+    }
+    if (mesDate <= 9) {
+        mesDate = '0' + mesDate
+    }
+
+    var datecomp = year + '-' + mesDate + '-' + dayDate
+    var getHour = allDate.getHours();
+
+    if (getHour <= 9) {
+        getHour = '0' + getHour
+    }
+
+    var getMinutes = allDate.getMinutes();
+    if (getMinutes <= 9) {
+        getMinutes = '0' + getMinutes
+    }
+
+    var hourPlusMinutes = getHour + ":" + getMinutes;
+
+    var cont_completed = 0
+    var cont_toDo = 0
+    var cont_inProgress = 0
+    var total_completed = 0
+    var quantia_toDo = 0
+
+    var getTasks = tasks.filter(function (task) {
+        return task.email === userActiv.email;
+    });
+
+    getTasks.forEach(function (task) {
+        var date = task.date;
+        var horaInicial = task.startTime;
+        var horaFinal = task.endTime;
+
+        if (horaInicial < 12) {
+            horaInicial += " am";
+        } else {
+            horaInicial += " pm";
+        }
+        if (horaFinal < 12) {
+            horaFinal += " am";
+        } else {
+            horaFinal += " pm";
+        }
+
+        if (date === datecomp) {
+            if (horaInicial > hourPlusMinutes) {
+                cont_toDo++
+            }
+
+            if (horaInicial <= hourPlusMinutes && horaFinal >= hourPlusMinutes) {
+                cont_inProgress++
+            }
+            if (hourPlusMinutes > horaFinal) {
+                cont_completed++
+            }
+        }
+
+    })
+    var totalTask = localStorage.getItem("totalTask")
+    var qtdCompleted = totalTask - (cont_toDo + cont_inProgress)
+    if (qtdCompleted < 0) {
+        qtdCompleted = 0
+    }
+    localStorage.setItem('qtdCompleted', qtdCompleted)
+    quantia_toDo = ((cont_toDo + cont_inProgress) / (cont_toDo + cont_inProgress + cont_completed)) * 100
+    quantia_toDo = 100 - quantia_toDo
+
+    localStorage.setItem("toDo", cont_toDo)
+    localStorage.setItem("percentCompleted", parseFloat(quantia_toDo.toFixed(2)))
+    localStorage.setItem("totalCompleted", cont_completed + total_completed)
+}
+
 function funcBar() {
+    showTascks()
     var percentCompleted = localStorage.getItem('percentCompleted')
     var qtd = localStorage.getItem('toDo')
     var IDp = document.getElementById('porcentCompleted')
@@ -89,7 +175,6 @@ function funcBar() {
         IDp.innerHTML = percentCompleted + '% complete'
         bar.style.width = percentCompleted + '%'
     }
-
 
     if (isNaN(qtd) || qtd == null) {
         IDh1.innerHTML = 'You no have tasks!'

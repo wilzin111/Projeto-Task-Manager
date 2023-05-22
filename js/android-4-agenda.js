@@ -169,7 +169,6 @@ function showTascks() {
         if (date > datecomp && date === dataSelec) {
 
             if (date === dataSelec) {
-                console.log('todo');
                 let element = document.createElement("div");
                 element.className = "test";
                 element.innerHTML =
@@ -190,7 +189,6 @@ function showTascks() {
         if (date < datecomp && date === dataSelec) {
             total_completed++
             if (date === dataSelec) {
-                console.log('completed');
                 let element = document.createElement("div");
                 element.className = "test";
                 element.innerHTML =
@@ -210,7 +208,6 @@ function showTascks() {
         }
         if (date === datecomp && date === dataSelec) {
             if (horaInicial > hourPlusMinutes) {
-                console.log('todo2');
                 cont_toDo++
                 let element = document.createElement("div");
                 element.className = "test";
@@ -231,7 +228,6 @@ function showTascks() {
 
             if (horaInicial <= hourPlusMinutes && horaFinal >= hourPlusMinutes) {
                 cont_inProgress++
-                console.log('improgresso');
                 let element = document.createElement("div");
                 element.className = "test";
                 element.innerHTML =
@@ -250,7 +246,6 @@ function showTascks() {
             }
 
             if (hourPlusMinutes > horaFinal) {
-                console.log('completed2');
                 cont_completed++
                 let element = document.createElement("div");
                 element.className = "test";
@@ -270,11 +265,12 @@ function showTascks() {
             }
         }
 
-
-
     })
     var totalTask = localStorage.getItem("totalTask")
     var qtdCompleted = totalTask - (cont_toDo + cont_inProgress)
+    if (qtdCompleted < 0) {
+        qtdCompleted = 0
+    }
     localStorage.setItem('qtdCompleted', qtdCompleted)
     quantia_toDo = ((cont_toDo + cont_inProgress) / (cont_toDo + cont_inProgress + cont_completed)) * 100
     quantia_toDo = 100 - quantia_toDo
